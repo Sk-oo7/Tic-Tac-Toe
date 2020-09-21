@@ -1,0 +1,335 @@
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"><style>
+body
+{
+  background-color:grey;
+  font-size: 20px;
+}
+input,.btn
+{
+  margin:  5px 5px 5px 5px;
+  width: 67px;
+  height: 73px;
+  font-size: 20px;
+         font-family:comic sans ms;
+         background-color: #606060;
+         border-color: #606060;
+          font-size: 25px;
+             border-radius: 10px;
+              color: white;
+
+}
+.btn{
+  border: 2px solid black;
+}
+.btn:hover,.btn:active,.btn:visited,.btn:link,.btn:focus{
+
+  color:white;
+}
+form,p,ol,li{
+   font-family:comic sans ms;
+}
+p,ol,li{
+  font-size: 35px;
+}
+#po
+{
+  background-color:whiteSMOKE;
+  margin-left:20px;
+  margin-right:20px;
+  border: 4px solid #11A5FF;
+  border-radius: 10px;
+
+}</style>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <br>
+        <br>
+<center>
+
+<div id=po>
+
+<form>
+  <h1><u>Tic Tac Toe!</u></h1>
+<input type=text id=ipt style=" width: 320px; background-color: white; color:black; font-size: 25px;  border-color:#606060; height:60px; margin-top:7px;" value="  Player 1" disabled>
+<br><br>
+<table>
+<tr>
+<td><input type=button class=btn id="bn1" value="" ></td>
+<td><input type=button class=btn id="bn2" value="" ></td>
+<td><input type=button class=btn id="bn3" value="" ></td>
+</tr>
+<tr>
+<td><input type=button class=btn id="bn4" value="" ></td>
+<td><input type=button class=btn id="bn5" value="" ></td>
+<td><input type=button class=btn id="bn6" value="" ></td>
+</tr>
+<tr>
+<td><input type=button class=btn id="bn7" value="" ></td>
+<td><input type=button class=btn id="bn8" value="" ></td>
+<td><input type=button class=btn id="bn9" value="" ></td></tr>
+<tr><td></td><td><input type="reset" id="reset" value="R" style=" background-color: #FEFEFE; border-color: #606060; color:black;" ></td><td></td></tr>
+</table>
+</form></div></center>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+count=0
+$(document).ready(function(){
+$('.btn').click(function(){
+
+if(count%2==0 && $(this).val()!='O' && $(this).val()!='X')
+{
+count=count+1
+$(this).val("O")
+$("#ipt").val("  Player 2")
+}
+if(count%2!=0 && $(this).val()!='O' && $(this).val()!='X')
+{
+count=count+1
+$(this).val("X");
+$("#ipt").val("  Player 1")
+}
+ if($("#bn1").val()==$("#bn2").val()  && $("#bn2").val()==$("#bn3").val() )
+{
+  if($("#bn1").val()=='O')
+  {
+  $("#ipt").val("  Player 1 is winner")
+    $("ol").append("<li> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Player 1</li>")
+    $("#bn1").css('backgroundColor','#11A5FF')
+      $("#bn1").css('borderColor','black')
+      $("#bn2").css('backgroundColor','#11A5FF')
+        $("#bn2").css('borderColor','black')
+        $("#bn3").css('backgroundColor','#11A5FF')
+          $("#bn3").css('borderColor','black')
+}
+  if($("#bn1").val()=='X')
+  {
+  $("#ipt").val("  Player 2 is winner")
+  $("ol").append("<li> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Player 2</li>")
+  $("#bn1").css('backgroundColor','#11A5FF')
+    $("#bn1").css('borderColor','black')
+    $("#bn2").css('backgroundColor','#11A5FF')
+      $("#bn2").css('borderColor','black')
+      $("#bn3").css('backgroundColor','#11A5FF')
+        $("#bn3").css('borderColor','black')
+}
+
+}
+
+if($("#bn1").val()==$("#bn4").val()  && $("#bn4").val()==$("#bn7").val() )
+{
+  if($("#bn1").val()=='O')
+  {
+  $("#ipt").val("  Player 1 is winner")
+    $("ol").append("<li> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Player 1</li>")
+    $("#bn1").css('backgroundColor','#11A5FF')
+      $("#bn1").css('borderColor','black')
+      $("#bn4").css('backgroundColor','#11A5FF')
+        $("#bn4").css('borderColor','black')
+        $("#bn7").css('backgroundColor','#11A5FF')
+          $("#bn7").css('borderColor','black')
+}
+  if($("#bn1").val()=='X')
+  {
+  $("#ipt").val("  Player 2 is winner")
+  $("ol").append("<li> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Player 2</li>")
+  $("#bn1").css('backgroundColor','#11A5FF')
+    $("#bn1").css('borderColor','black')
+    $("#bn4").css('backgroundColor','#11A5FF')
+      $("#bn4").css('borderColor','black')
+      $("#bn7").css('backgroundColor','#11A5FF')
+        $("#bn7").css('borderColor','black')
+}
+}
+ if($("#bn1").val()==$("#bn5").val()  && $("#bn5").val()==$("#bn9").val() )
+{
+  if($("#bn1").val()=='O')
+  {
+  $("#ipt").val("  Player 1 is winner")
+    $("ol").append("<li> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Player 1</li>")
+    $("#bn1").css('backgroundColor','#11A5FF')
+      $("#bn1").css('borderColor','black')
+      $("#bn5").css('backgroundColor','#11A5FF')
+        $("#bn5").css('borderColor','black')
+        $("#bn9").css('backgroundColor','#11A5FF')
+          $("#bn9").css('borderColor','black')
+}
+  if($("#bn1").val()=='X')
+  {
+  $("#ipt").val("  Player 2 is winner")
+  $("ol").append("<li> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Player 2</li>")
+  $("#bn1").css('backgroundColor','#11A5FF')
+    $("#bn1").css('borderColor','black')
+    $("#bn5").css('backgroundColor','#11A5FF')
+      $("#bn5").css('borderColor','black')
+      $("#bn9").css('backgroundColor','#11A5FF')
+        $("#bn9").css('borderColor','black')
+}
+}
+ if($("#bn2").val()==$("#bn5").val()  && $("#bn5").val()==$("#bn8").val() )
+{
+  if($("#bn2").val()=='O')
+  {
+  $("#ipt").val("  Player 1 is winner")
+    $("ol").append("<li> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Player 1</li>")
+    $("#bn2").css('backgroundColor','#11A5FF')
+      $("#bn2").css('borderColor','black')
+      $("#bn5").css('backgroundColor','#11A5FF')
+        $("#bn5").css('borderColor','black')
+        $("#bn8").css('backgroundColor','#11A5FF')
+          $("#bn8").css('borderColor','black')
+}
+  if($("#bn2").val()=='X')
+  {
+  $("#ipt").val("  Player 2 is winner")
+  $("ol").append("<li> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Player 2</li>")
+  $("#bn2").css('backgroundColor','#11A5FF')
+    $("#bn2").css('borderColor','black')
+    $("#bn5").css('backgroundColor','#11A5FF')
+      $("#bn5").css('borderColor','black')
+      $("#bn8").css('backgroundColor','#11A5FF')
+        $("#bn8").css('borderColor','black')
+}
+}
+if($("#bn3").val()==$("#bn6").val()  && $("#bn6").val()==$("#bn9").val() )
+{
+  if($("#bn3").val()=='O')
+  {
+  $("#ipt").val("  Player 1 is winner")
+    $("ol").append("<li> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Player 1</li>")
+    $("#bn3").css('backgroundColor','#11A5FF')
+      $("#bn3").css('borderColor','black')
+      $("#bn6").css('backgroundColor','#11A5FF')
+        $("#bn6").css('borderColor','black')
+        $("#bn9").css('backgroundColor','#11A5FF')
+          $("#bn9").css('borderColor','black')
+}
+  if($("#bn3").val()=='X')
+  {
+  $("#ipt").val("  Player 2 is winner")
+  $("ol").append("<li> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Player 2</li>")
+  $("#bn3").css('backgroundColor','#11A5FF')
+    $("#bn3").css('borderColor','black')
+    $("#bn6").css('backgroundColor','#11A5FF')
+      $("#bn6").css('borderColor','black')
+      $("#bn9").css('backgroundColor','#11A5FF')
+        $("#bn9").css('borderColor','black')
+}
+}
+ if($("#bn3").val()==$("#bn5").val()  && $("#bn5").val()==$("#bn7").val() )
+{
+  if($("#bn3").val()=='O')
+  {
+  $("#ipt").val("  Player 1 is winner")
+    $("ol").append("<li> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Player 1</li>")
+    $("#bn3").css('backgroundColor','#11A5FF')
+      $("#bn3").css('borderColor','black')
+      $("#bn5").css('backgroundColor','#11A5FF')
+        $("#bn5").css('borderColor','black')
+        $("#bn7").css('backgroundColor','#11A5FF')
+          $("#bn7").css('borderColor','black')
+}
+  if($("#bn3").val()=='X')
+  {
+  $("#ipt").val("  Player 2 is winner")
+  $("ol").append("<li> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Player 2</li>")
+  $("#bn3").css('backgroundColor','#11A5FF')
+    $("#bn3").css('borderColor','black')
+    $("#bn5").css('backgroundColor','#11A5FF')
+      $("#bn5").css('borderColor','black')
+      $("#bn7").css('backgroundColor','#11A5FF')
+        $("#bn7").css('borderColor','black')
+}
+}
+ if($("#bn4").val()==$("#bn5").val()  && $("#bn5").val()==$("#bn6").val() )
+{
+  if($("#bn4").val()=='O')
+  {
+  $("#ipt").val("  Player 1 is winner")
+    $("ol").append("<li>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp   Player 1</li>")
+    $("#bn4").css('backgroundColor','#11A5FF')
+      $("#bn4").css('borderColor','black')
+      $("#bn5").css('backgroundColor','#11A5FF')
+        $("#bn5").css('borderColor','black')
+        $("#bn6").css('backgroundColor','#11A5FF')
+          $("#bn6").css('borderColor','black')
+}
+  if($("#bn4").val()=='X')
+  {
+  $("#ipt").val("  Player 2 is winner")
+  $("ol").append("<li> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  Player 2</li>")
+  $("#bn4").css('backgroundColor','#11A5FF')
+    $("#bn4").css('borderColor','black')
+    $("#bn5").css('backgroundColor','#11A5FF')
+      $("#bn5").css('borderColor','black')
+      $("#bn6").css('backgroundColor','#11A5FF')
+        $("#bn6").css('borderColor','black')
+}
+}
+ if($("#bn7").val()==$("#bn8").val()  && $("#bn8").val()==$("#bn9").val() )
+{
+  if($("#bn7").val()=='O')
+  {
+  $("#ipt").val("  Player 1 is winner")
+    $("ol").append("<li>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp   Player 1</li>")
+    $("#bn7").css('backgroundColor','#11A5FF')
+      $("#bn7").css('borderColor','black')
+      $("#bn8").css('backgroundColor','#11A5FF')
+        $("#bn8").css('borderColor','black')
+        $("#bn9").css('backgroundColor','#11A5FF')
+          $("#bn9").css('borderColor','black')
+}
+  if($("#bn7").val()=='X')
+  {
+  $("#ipt").val("  Player 2 is winner")
+  $("ol").append("<li> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  Player 2</li>")
+  $("#bn7").css('backgroundColor','#11A5FF')
+    $("#bn7").css('borderColor','black')
+    $("#bn8").css('backgroundColor','#11A5FF')
+      $("#bn8").css('borderColor','black')
+      $("#bn9").css('backgroundColor','#11A5FF')
+        $("#bn9").css('borderColor','black')
+}
+}
+  if(count==9)
+{
+  $("#ipt").val("  Draw")
+  $("ol").append("<li> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  Draw</li>")
+}
+
+});
+$("#reset").click(function(){
+$(".btn").val("")
+count=0
+$(".btn").css('backgroundColor',' #606060')
+  $(".btn").css('borderColor','black')
+  $(".btn").css('backgroundColor','#606060')
+    $(".btn").css('borderColor',' black')
+    $(".btn").css('backgroundColor',' #606060')
+      $(".btn").css('borderColor',' black')
+
+});
+
+});
+</script>
+</div>
+<div class="col-sm-2">
+</div>
+  <div class="col-sm-4">
+    <br>
+    <br>
+<p id=para>
+Round No. &nbsp &nbsp Winner
+<ol type=1>
+
+</ol>
+</p>
+</div>
+</div>
+</body>
+</html>
